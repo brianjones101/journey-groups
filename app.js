@@ -1,6 +1,7 @@
 // TODO: Split the API methods out in to the server folder.
 var express = require('express'),
 	connect = require('connect'),
+	moment = require('moment'),
 	_ = require('lodash'),
 	app = express();
 
@@ -88,14 +89,38 @@ app.post('/group', function(req, res) {
 		}
 	}
 
+	// TODO: Figure out how to look up users in CCB. But until then, hard code the leader to be Abby.
+	data.main_leader_id = 1530;
+
+	data.meeting_location_state = data.meeting_location_state.toUpperCase();
+	switch (data.meeting_location_state) {
+		case 'MARYLAND':
+			data.meeting_location_state = 'MD';
+			break;
+		case 'DELAWARE':
+			data.meeting_location_state = 'DE';
+			break;
+		case 'NEW JERSEY':
+			data.meeting_location_state = 'NJ';
+			break;
+		case 'PENNSYLVANIA':
+			data.meeting_location_state = 'PA';
+			break;
+	}
 	data.name = '[REVIEW] ' + data.name + ' (' + groupType(data.udf_group_pulldown_1_id) + ')';
 
-	// TODO: Look up leader in CCB, rather than appending their information here.
 	data.description = data.description + '\n'
+	+ '\n- Start Time: ' + moment(data.meeting_time_start).format('hh:mm A')
+	+ '\n- End Time: ' + moment(data.meeting_time_end).format('hh:mm A')
 	+ '\n- Leader Name: ' + data.yourname
 	+ '\n- Leader Email: ' + data.youremail
 	+ '\n- Leader Phone: ' + data.yourphone;
 
+	var creator = {
+		name: data.yourname,
+		email: data.youremail,
+		phone: data.yourphone
+	};
 	delete data.yourname;
 	delete data.youremail;
 	delete data.yourphone;
@@ -112,7 +137,24 @@ app.post('/group', function(req, res) {
 		if (err) {
 			return res.send({ success: !err, result: err });
 		}
-		return res.send({ success: true });
+		var groupID = body.split('<group id="')[1].split('"')[0];
+		email({
+			replyTo: data.youremail,
+			subject: '[JGROUPS] ' + data.name,
+			text: 'Hello friend!\n\n'
+			+ (creator.name) + ' is interested in starting a J-Group! Would you reach out to them as soon as you can to connect with them?\n\n'
+			+ '\tJGroup: ' + data.name + '\n'
+			+ '\tEmail: ' + creator.email + '\n'
+			+ '\tPhone: ' + (creator.phone || 'Not Provided') + '\n'
+			+ '\tCCB Link: https://yourjourney.ccbchurch.com/group_edit.php?ax=edit&group_id=' + groupID + '\n'
+			+ '\nHave a great day!'
+			+ '\nThe Journey'
+		}, function(err) {
+			if (err) {
+				console.error(err);
+			}
+			return res.send({ success: true });
+		});
 	});
 
 

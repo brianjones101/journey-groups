@@ -20,14 +20,18 @@ angular.module('jgroupsApp')
 				model: '=',
 				type: '@'
 			},
-			compile: function(element, attrs) {
-				if (!attrs.type) {
-					attrs.type = 'text';
-					console.log('set type');
-				}
-				console.log(attrs);
-			},
 			templateUrl: '/scripts/directives/formInput.html'
+		};
+	})
+	.directive('formInputTime', function() {
+		return {
+			restrict: 'E',
+			replace: true,
+			scope: {
+				name: '@',
+				model: '='
+			},
+			templateUrl: '/scripts/directives/formInputTime.html'
 		};
 	})
 	.directive('formHint', function() {

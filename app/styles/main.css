@@ -171,3 +171,7 @@ textarea.form-control {
 #start-a-jgroup:hover:before {
 	left: -30px;
 }
+
+input.ng-invalid {
+	background-color: #ffaaaa;
+}

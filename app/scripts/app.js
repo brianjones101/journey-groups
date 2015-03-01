@@ -15,7 +15,8 @@ angular
 		'ngResource',
 		'ngRoute',
 		'ngSanitize',
-		'ngTouch'
+		'ngTouch',
+		'ui.timepicker'
 	])
 	.filter('encodeURIComponent', function() {
 		return window.encodeURIComponent;

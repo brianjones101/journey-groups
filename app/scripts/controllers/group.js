@@ -17,6 +17,8 @@ angular.module('jgroupsApp')
 
 		function newGroup() {
 			return {
+				meeting_time_start: new Date(),
+				meeting_time_end: new Date(),
 				udf_group_pulldown_1_id: '1',
 				udf_group_pulldown_2_id: '3',
 				udf_group_pulldown_3_id: '4',

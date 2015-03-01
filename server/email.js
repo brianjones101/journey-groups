@@ -21,7 +21,7 @@ module.exports = function(options, callback) {
 	var mailOptions = {
 		from: defaultConfig.EMAIL_USERNAME || process.env.EMAIL_USERNAME,
 		replyTo: options.replyTo,
-		to: options.to,
+		to: options.to || defaultConfig.EMAIL_USERNAME || process.env.EMAIL_USERNAME,
 		subject: options.subject,
 		text: options.text
 	};
