@@ -61,13 +61,13 @@ app.post('/contact', function(req, res) {
     replyTo: body.email,
     subject: '[JGROUPS] ' + (body.name || 'Someone') + ' Wants to Join Your JGroup!',
     text: 'Hi ' + body.owner_name + '!\n\n'
-    + (body.name || 'Someone') + ' is interested in joining your JGroup! Would you reach out to them as soon as you can to connect and start having fun together?\n\n'
+    + (body.name || 'Someone') + ' is interested in joining your J-Group! Would you reach out to them as soon as you can to connect with them?\n\n'
     + '\tJGroup: ' + body.group_name + '\n'
     + '\tName: ' + (body.name || 'Not Provided') + '\n'
     + '\tEmail: ' + body.email + '\n'
     + '\tPhone: ' + (body.phone || 'Not Provided') + '\n'
-    + '\nHave a blessed day!'
-    + '\nThe JTeam'
+    + '\nHave a great day!'
+    + '\nThe Journey'
   }, function(err) {
     return res.send({ success: !err, result: err });
   });
