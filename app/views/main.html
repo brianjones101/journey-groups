@@ -2,58 +2,62 @@
   Email Modal
 -->
 <div class="modal fade send-email-modal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-            aria-hidden="true">&times;</span></button>
-        <h2 class="modal-title">Email {{ contact.owner_name._ }}</h2>
-      </div>
-      <div class="modal-body">
-        <form class="form-horizontal text-left" role="form">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+						aria-hidden="true">&times;</span></button>
+				<h2 class="modal-title">Email {{ contact.owner_name._ }}</h2>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal text-left" role="form">
 
-          <div class="form-group">
-            <label for="c-name" class="col-sm-5 control-label">What&rsquo;s your name?</label>
+					<div class="form-group">
+						<label for="c-name" class="col-sm-5 control-label">What&rsquo;s your name?</label>
 
-            <div class="col-sm-7">
-              <input type="text" ng-model="contact.name" id="c-name" name="c-name" class="form-control"/>
-            </div>
-          </div>
+						<div class="col-sm-7">
+							<input type="text" ng-model="contact.name" id="c-name" name="c-name" class="form-control"/>
+						</div>
+					</div>
 
-          <div class="form-group">
-            <label for="c-email" class="col-sm-5 control-label">What&rsquo;s your email?</label>
+					<div class="form-group">
+						<label for="c-email" class="col-sm-5 control-label">What&rsquo;s your email?</label>
 
-            <div class="col-sm-7">
-              <input type="email" ng-model="contact.email" id="c-email" name="c-email" class="form-control"/>
-            </div>
-          </div>
+						<div class="col-sm-7">
+							<input type="email" ng-model="contact.email" id="c-email" name="c-email"
+								   class="form-control"/>
+						</div>
+					</div>
 
-          <div class="form-group">
-            <label for="c-phone" class="col-sm-5 control-label">What&rsquo;s your phone number?</label>
+					<div class="form-group">
+						<label for="c-phone" class="col-sm-5 control-label">What&rsquo;s your phone number?</label>
 
-            <div class="col-sm-7">
-              <input type="tel" ng-model="contact.phone" id="c-phone" name="c-phone" class="form-control"/>
-            </div>
-          </div>
+						<div class="col-sm-7">
+							<input type="tel" ng-model="contact.phone" id="c-phone" name="c-phone"
+								   class="form-control"/>
+						</div>
+					</div>
 
-        </form>
-      </div>
-      <div class="modal-footer">
-        <div class="text-right find-container">
-          <button ng-if="!contacting" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<div class="text-right find-container">
+					<button ng-if="!contacting" type="button" class="btn btn-default" data-dismiss="modal">Cancel
+					</button>
 
-          <input ng-if="!contacting" type="submit" ng-click="submitEmailDialog()" class="btn btn-primary btn-send-email"
-                 value="Contact"/>
+					<input ng-if="!contacting" type="submit" ng-click="submitEmailDialog()"
+						   class="btn btn-primary btn-send-email"
+						   value="Contact"/>
 
-          <div ng-if="contacting" class="progress progress-striped active">
-            <div class="progress-bar progress-bar-striped active" role="progressbar">
-              <span>Sending...</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+					<div ng-if="contacting" class="progress progress-striped active">
+						<div class="progress-bar progress-bar-striped active" role="progressbar">
+							<span>Sending...</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!--
@@ -162,11 +166,11 @@
 			<input ng-if="!updating" type="submit" ng-click="updateResults()" class="btn btn-primary btn-find-a-group"
 				   value="Find a Group"/>
 
-      <div ng-if="updating" class="progress progress-striped active">
-        <div class="progress-bar progress-bar-striped active" role="progressbar">
-          <span>Searching for Groups...</span>
-        </div>
-      </div>
+			<div ng-if="updating" class="progress progress-striped active">
+				<div class="progress-bar progress-bar-striped active" role="progressbar">
+					<span>Searching for Groups...</span>
+				</div>
+			</div>
 		</div>
 
 	</form>
@@ -184,7 +188,9 @@
 		<dl class="dl-horizontal">
 
 			<dt ng-if="result.meet_day_name !== 'Varies' && result.meet_time_name !== 'Varies'">When</dt>
-			<dd ng-if="result.meet_day_name !== 'Varies' && result.meet_time_name !== 'Varies'">{{ result.meet_day_name }}&nbsp;{{ result.meet_time_name }}</dd>
+			<dd ng-if="result.meet_day_name !== 'Varies' && result.meet_time_name !== 'Varies'">{{ result.meet_day_name
+				}}&nbsp;{{ result.meet_time_name }}
+			</dd>
 
 			<dt ng-if="result.address.state">Where</dt>
 			<dd ng-if="result.address.state">

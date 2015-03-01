@@ -1,169 +1,173 @@
 /* Space out content a bit */
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background: #3c3d3f; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover, #3c3d3f 1%, #27282a 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%, #3c3d3f), color-stop(100%, #27282a)); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover, #3c3d3f 1%, #27282a 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover, #3c3d3f 1%, #27282a 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover, #3c3d3f 1%, #27282a 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center, #3c3d3f 1%, #27282a 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3c3d3f', endColorstr='#27282a', GradientType=1); /* IE6-9 fallback on horizontal gradient */
-    background-attachment: fixed;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: #3c3d3f; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, #3c3d3f 1%, #27282a 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%, #3c3d3f), color-stop(100%, #27282a)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, #3c3d3f 1%, #27282a 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, #3c3d3f 1%, #27282a 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, #3c3d3f 1%, #27282a 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, #3c3d3f 1%, #27282a 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3c3d3f', endColorstr='#27282a', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+	background-attachment: fixed;
 
-    font-size: medium;
+	font-size: medium;
 }
 
 .main-logo {
-    margin: 0 auto 20px;
-    display: block;
-    width: 300px;
-    height: 50px;
-    background-image: url('../images/logo.png');
-    background-size: 300px 50px;
+	margin: 0 auto 20px;
+	display: block;
+	width: 300px;
+	height: 50px;
+	background-image: url('../images/logo.png');
+	background-size: 300px 50px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
 .footer {
-    padding-left: 15px;
-    padding-right: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .header img {
-    position: relative;
-    top: -20px;
-    margin-bottom: -20px;
+	position: relative;
+	top: -20px;
+	margin-bottom: -20px;
 }
 
 /* Custom page header */
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 40px;
+	padding-bottom: 0;
 }
 
 .jumbotron {
-    padding: 24px;
+	padding: 24px;
 }
 
 .jumbotron h1 {
-    font-size: 32px;
-    margin-top: 0;
-    padding-top: 0;
+	font-size: 32px;
+	margin-top: 0;
+	padding-top: 0;
 }
 
 /* Custom page footer */
 .footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
+	padding-top: 19px;
+	color: #777;
+	border-top: 1px solid #e5e5e5;
 }
 
 /* Customize container */
 @media (min-width: 768px) {
-    .container {
-        max-width: 730px;
-    }
+	.container {
+		max-width: 730px;
+	}
 }
 
 .container-narrow > hr {
-    margin: 30px 0;
+	margin: 30px 0;
 }
 
 /* Main marketing message and sign up button */
 .jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
+	text-align: center;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 textarea.form-control {
-  height: 100px;
+	height: 100px;
 }
 
 .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+	font-size: 21px;
+	padding: 14px 24px;
 }
 
 /* Supporting marketing content */
 .marketing {
-    margin: 40px 0;
+	margin: 40px 0;
 }
 
 .marketing p + h4 {
-    margin-top: 28px;
+	margin-top: 28px;
 }
 
 .result {
-    background-color: white;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    border: 1px solid #eee;
-    padding: 20px;
+	background-color: white;
+	margin-bottom: 10px;
+	border-radius: 3px;
+	border: 1px solid #eee;
+	padding: 20px;
 }
 
 .find-container .progress {
-    height: 50px;
+	height: 50px;
 }
+
 .find-container .progress-bar {
-    width: 100%;
+	width: 100%;
 }
+
 .find-container .progress-bar span {
-    font-size: 24px;
-    font-weight: bold;
-    opacity: 0.5;
-    line-height: 50px;
+	font-size: 24px;
+	font-weight: bold;
+	opacity: 0.5;
+	line-height: 50px;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
+	/* Remove the padding we set earlier */
+	.header,
+	.marketing,
+	.footer {
+		padding-left: 0;
+		padding-right: 0;
+	}
 
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 10px;
-    }
+	/* Space out the masthead */
+	.header {
+		margin-bottom: 10px;
+	}
 
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
+	/* Remove the bottom border on the jumbotron for visual effect */
+	.jumbotron {
+		border-bottom: 0;
+	}
 }
 
 /* Retina Displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .main-logo {
-        background-image: url('../images/logo@2x.png');
-    }
+	.main-logo {
+		background-image: url('../images/logo@2x.png');
+	}
 }
 
 #start-a-jgroup {
-  position: relative;
+	position: relative;
 }
-#start-a-jgroup:hover:after, #start-a-jgroup:hover:before {
-  content: '♫';
-  width: 30px;
-  height: 30px;
-  display: block;
-  color: black;
-  position: absolute;
-  top: 0;
-}
-#start-a-jgroup:hover:after { right: -30px; }
-#start-a-jgroup:hover:before { left: -30px; }
 
-.control-hint-text {
-  padding-left: 15px;
-  padding-right: 15px;
+#start-a-jgroup:hover:after, #start-a-jgroup:hover:before {
+	content: '♫';
+	width: 30px;
+	height: 30px;
+	display: block;
+	color: black;
+	position: absolute;
+	top: 0;
+}
+
+#start-a-jgroup:hover:after {
+	right: -30px;
+}
+
+#start-a-jgroup:hover:before {
+	left: -30px;
 }

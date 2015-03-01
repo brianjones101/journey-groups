@@ -1,225 +1,141 @@
 <div class="jumbotron">
-  <h1 id="start-a-jgroup">Do you want to start a J-Group?</h1>
+	<h1 id="start-a-jgroup">Do you want to start a J-Group?</h1>
 
-  <form class="form-horizontal text-left" role="form">
+	<form class="form-horizontal text-left" role="form">
 
-    <h3>Leader</h3>
+		<h3>
+			Leader
+		</h3>
+		<form-group name="jg-yourname" label="Your Name">
+			<form-input name="jg-yourname" model="group.yourname"></form-input>
+		</form-group>
+		<form-group name="jg-youremail" label="Email Address">
+			<form-input name="jg-youremail" model="group.youremail" type="email"></form-input>
+		</form-group>
+		<form-group name="jg-yourphone" label="Phone Number">
+			<form-input name="jg-yourphone" model="group.yourphone" type="tel"></form-input>
+		</form-group>
 
-    <div class="form-group">
-      <label for="jg-yourname" class="col-sm-4 control-label">Name</label>
+		<h3>
+			J-Group
+		</h3>
+		<form-group name="jg-name" label="Name">
+			<form-input name="jg-name" model="group.name"></form-input>
+			<form-hint>
+				This is what will appear in our J-Groups catalogue.
+			</form-hint>
+		</form-group>
+		<form-group name="jg-description" label="Description">
+			<form-input name="jg-description" model="group.description"></form-input>
+			<form-hint>
+				This is how your group will be described in the J-Groups catalogue. Please use 50 words or less.
+			</form-hint>
+		</form-group>
+		<form-group name="jg-type" label="Category">
+			<select ng-model="group.udf_group_pulldown_1_id" id="jg-type" name="jg-type" class="form-control">
+				<option value="1">Activity</option>
+				<option value="2">Discussion</option>
+				<option value="3">Care</option>
+				<option value="4">Code Red</option>
+				<option value="5">NextGen</option>
+			</select>
+		</form-group>
+		<form-group name="jg-people" label="Who is your J-Group for?">
+			<select ng-model="group.udf_group_pulldown_2_id" id="jg-people" class="form-control">
+				<option value="3">Co-ed</option>
+				<option value="1">Men</option>
+				<option value="2">Women</option>
+				<option value="4">Students</option>
+			</select>
+		</form-group>
+		<form-group name="jg-ages" label="Age Range">
+			<select ng-model="group.udf_group_pulldown_3_id" id="jg-ages" class="form-control">
+				<option value="4">Any Age</option>
+				<option value="9">Middle School</option>
+				<option value="10">High School</option>
+				<option value="8">18-24</option>
+				<option value="6">18+</option>
+				<option value="7">Young Adults</option>
+				<option value="5">40+</option>
+			</select>
+		</form-group>
+		<form-group name="jg-when" label="What day will you usually meet?">
+			<select ng-model="group.meeting_day_id" id="jg-when" class="form-control">
+				<option value="1">Varies</option>
+				<option value="4">Sunday</option>
+				<option value="5">Monday</option>
+				<option value="6">Tuesday</option>
+				<option value="7">Wednesday</option>
+				<option value="8">Thursday</option>
+				<option value="9">Friday</option>
+				<option value="10">Saturday</option>
+				<option value="11">Every Other Sunday</option>
+				<option value="12">Every Other Monday</option>
+				<option value="13">Every Other Tuesday</option>
+				<option value="14">Every Other Wednesday</option>
+				<option value="15">Every Other Thursday</option>
+				<option value="16">Every Other Friday</option>
+				<option value="17">Every Other Saturday</option>
+				<option value="18">First Sunday of Every Month</option>
+				<option value="19">First Monday of Every Month</option>
+				<option value="20">First Tuesday of Every Month</option>
+				<option value="21">First Wednesday of Every Month</option>
+				<option value="22">First Thursday of Every Month</option>
+				<option value="23">First Friday of Every Month</option>
+				<option value="24">First Saturday of Every Month</option>
+			</select>
+		</form-group>
+		<form-group name="jg-time-id" label="What time of day?">
+			<select ng-model="group.meeting_time_id" id="jg-time-id" class="form-control">
+				<option value="1">Varies</option>
+				<option value="2">Breakfast</option>
+				<option value="3">Morning</option>
+				<option value="4">Lunch</option>
+				<option value="5">Afternoon</option>
+				<option value="6">After Work</option>
+				<option value="7">Dinner</option>
+				<option value="8">Evening</option>
+			</select>
+		</form-group>
+		<form-group name="jg-time-start" label="What time will it start?">
+			<form-input name="jg-time-start" model="group.meeting_time_start"></form-input>
+		</form-group>
+		<form-group name="jg-time-end" label="What time will it end?">
+			<form-input name="jg-time-end" model="group.meeting_time_start"></form-input>
+		</form-group>
+		<form-group name="jg-childcare" label="Is this group child-friendly?">
+			<label>
+				<input ng-model="group.childcare_provided" id="jg-childcare" type="checkbox">
+				Yes, let the children come!
+			</label>
+		</form-group>
 
-      <div class="col-sm-8">
-        <input type="text" ng-model="group.yourname" id="jg-yourname" name="jg-yourname" class="form-control"/>
-      </div>
-    </div>
+		<h3>
+			Location
+		</h3>
+		<form-group name="jg-street" label="Street Address">
+			<form-input name="jg-street" model="group.meeting_location_street_address"></form-input>
+		</form-group>
+		<form-group name="jg-city" label="City">
+			<form-input name="jg-city" model="group.meeting_location_city"></form-input>
+		</form-group>
+		<form-group name="jg-state" label="State">
+			<form-input name="jg-state" model="group.meeting_location_state"></form-input>
+		</form-group>
+		<form-group name="jg-zip" label="Zip">
+			<form-input name="jg-zip" model="group.meeting_location_zip"></form-input>
+		</form-group>
 
-    <div class="form-group">
-      <label for="jg-youremail" class="col-sm-4 control-label">Email Address</label>
+		<div class="text-center find-container">
+			<input ng-if="!saving" type="submit" ng-click="startAGroup()" class="btn btn-primary btn-start-a-group"
+				   value="Start a Group"/>
 
-      <div class="col-sm-8">
-        <input type="email" ng-model="group.youremail" id="jg-youremail" name="jg-youremail" class="form-control"/>
-      </div>
-    </div>
+			<div ng-if="saving" class="progress progress-striped active">
+				<div class="progress-bar progress-bar-striped active" role="progressbar">
+					<span>Starting Your Group...</span>
+				</div>
+			</div>
+		</div>
 
-    <div class="form-group">
-      <label for="jg-yourphone" class="col-sm-4 control-label">Phone Number</label>
-
-      <div class="col-sm-8">
-        <input type="tel" ng-model="group.yourphone" id="jg-yourphone" name="jg-yourphone" class="form-control"/>
-      </div>
-    </div>
-
-    <h3>J-Group</h3>
-
-    <div class="form-group">
-      <label for="jg-name" class="col-sm-4 control-label">Name</label>
-
-      <div class="col-sm-8">
-        <input type="text" ng-model="group.name" id="jg-name" name="jg-name" class="form-control"/>
-      </div>
-
-      <span class="text-muted control-hint-text col-sm-offset-4 col-sm-8">
-        This is what will appear in our J-Groups catalogue.
-      </span>
-    </div>
-
-    <div class="form-group">
-      <label for="jg-description" class="col-sm-4 control-label">Description</label>
-
-      <div class="col-sm-8">
-        <textarea ng-model="group.description" id="jg-description" name="jg-description"
-                  class="form-control"></textarea>
-      </div>
-
-      <span class="text-muted control-hint-text col-sm-offset-4 col-sm-8">
-        This is how your group will be described in the J-Groups catalogue. Please use 50 words or less.
-      </span>
-    </div>
-
-    <div class="form-group">
-      <label for="jg-type" class="col-sm-4 control-label">Category</label>
-
-      <div class="col-sm-8">
-        <select ng-model="group.udf_group_pulldown_1_id" id="jg-type" name="jg-type" class="form-control">
-          <option value="1">Activity</option>
-          <option value="2">Discussion</option>
-          <option value="3">Care</option>
-          <option value="4">Code Red</option>
-          <option value="5">NextGen</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="jg-people" class="col-sm-4 control-label">Who is your J-Group for?</label>
-
-      <div class="col-sm-8">
-        <select ng-model="group.udf_group_pulldown_2_id" id="jg-people" class="form-control">
-          <option value="3">Co-ed</option>
-          <option value="1">Men</option>
-          <option value="2">Women</option>
-          <option value="4">Students</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="jg-ages" class="col-sm-4 control-label">Age Range</label>
-
-      <div class="col-sm-8">
-        <select ng-model="group.udf_group_pulldown_3_id" id="jg-ages" class="form-control">
-          <option value="4">Any Age</option>
-          <option value="9">Middle School</option>
-          <option value="10">High School</option>
-          <option value="8">18-24</option>
-          <option value="6">18+</option>
-          <option value="7">Young Adults</option>
-          <option value="5">40+</option>
-        </select>
-      </div>
-    </div>
-
-
-    <div class="form-group">
-      <label for="jg-when" class="col-sm-4 control-label">What day will you usually meet?</label>
-
-      <div class="col-sm-8">
-        <select ng-model="group.meeting_day_id" id="jg-when" class="form-control">
-          <option value="1">Varies</option>
-          <option value="4">Sunday</option>
-          <option value="5">Monday</option>
-          <option value="6">Tuesday</option>
-          <option value="7">Wednesday</option>
-          <option value="8">Thursday</option>
-          <option value="9">Friday</option>
-          <option value="10">Saturday</option>
-          <option value="11">Every Other Sunday</option>
-          <option value="12">Every Other Monday</option>
-          <option value="13">Every Other Tuesday</option>
-          <option value="14">Every Other Wednesday</option>
-          <option value="15">Every Other Thursday</option>
-          <option value="16">Every Other Friday</option>
-          <option value="17">Every Other Saturday</option>
-          <option value="18">First Sunday of Every Month</option>
-          <option value="19">First Monday of Every Month</option>
-          <option value="20">First Tuesday of Every Month</option>
-          <option value="21">First Wednesday of Every Month</option>
-          <option value="22">First Thursday of Every Month</option>
-          <option value="23">First Friday of Every Month</option>
-          <option value="24">First Saturday of Every Month</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="jg-time-id" class="col-sm-4 control-label">What time of day?</label>
-
-      <div class="col-sm-8">
-        <select ng-model="group.meeting_time_id" id="jg-time-id" class="form-control">
-          <option value="1">Varies</option>
-          <option value="2">Breakfast</option>
-          <option value="3">Morning</option>
-          <option value="4">Lunch</option>
-          <option value="5">Afternoon</option>
-          <option value="6">After Work</option>
-          <option value="7">Dinner</option>
-          <option value="8">Evening</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="jg-time-start" class="col-sm-4 control-label">What time will it start?</label>
-
-      <div class="col-sm-8">
-        <input type="text" ng-model="group.meeting_time_start" id="jg-time-start" class="form-control"/>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="jg-time-end" class="col-sm-4 control-label">What time will it end?</label>
-
-      <div class="col-sm-8">
-        <input type="text" ng-model="group.meeting_time_end" id="jg-time-end" class="form-control"/>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="jg-childcare" class="col-sm-4 control-label">Is this group child-friendly?</label>
-
-      <div class="col-sm-8">
-        <div class="checkbox text-left">
-          <label>
-            <input ng-model="group.childcare_provided" id="jg-childcare" type="checkbox"> Yes, let the children come!
-          </label>
-        </div>
-      </div>
-    </div>
-
-    <h3>Location</h3>
-
-    <div class="form-group">
-      <label for="jg-street" class="col-sm-4 control-label">Street Address</label>
-
-      <div class="col-sm-8">
-        <input type="text" ng-model="group.meeting_location_street_address" id="jg-street" name="jg-street" class="form-control"/>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="jg-city" class="col-sm-4 control-label">City</label>
-
-      <div class="col-sm-8">
-        <input type="text" ng-model="group.meeting_location_city" id="jg-city" name="jg-city" class="form-control"/>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="jg-state" class="col-sm-4 control-label">State</label>
-
-      <div class="col-sm-8">
-        <input type="text" ng-model="group.meeting_location_state" id="jg-state" name="jg-state" class="form-control"/>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="jg-zip" class="col-sm-4 control-label">Zip</label>
-
-      <div class="col-sm-8">
-        <input type="text" ng-model="group.meeting_location_zip" id="jg-zip" name="jg-zip" class="form-control"/>
-      </div>
-    </div>
-
-    <div class="text-center find-container">
-      <input ng-if="!saving" type="submit" ng-click="startAGroup()" class="btn btn-primary btn-start-a-group"
-             value="Start a Group"/>
-
-      <div ng-if="saving" class="progress progress-striped active">
-        <div class="progress-bar progress-bar-striped active" role="progressbar">
-          <span>Starting Your Group...</span>
-        </div>
-      </div>
-    </div>
-
-  </form>
+	</form>
 </div>
