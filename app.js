@@ -146,7 +146,7 @@ app.post('/group', function(req, res) {
 			+ '\tJGroup: ' + data.name + '\n'
 			+ '\tEmail: ' + creator.email + '\n'
 			+ '\tPhone: ' + (creator.phone || 'Not Provided') + '\n'
-			+ '\tCCB Link: https://yourjourney.ccbchurch.com/group_edit.php?ax=edit&group_id=' + groupID + '\n'
+			+ '\tCCB Link: https://elevatelife.ccbchurch.com/group_edit.php?ax=edit&group_id=' + groupID + '\n'
 			+ '\nHave a great day!'
 			+ '\nThe Journey'
 		}, function(err) {
