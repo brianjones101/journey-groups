@@ -131,7 +131,7 @@ app.post('/group', function(req, res) {
 
 	api.hitAPI({
 		method: 'POST',
-		url: 'https://yourjourney.ccbchurch.com/api.php?srv=create_group',
+		url: 'https://elevatelife.ccbchurch.com/api.php?srv=create_group',
 		form: data
 	}, function(err, httpResponse, body) {
 		if (err) {
